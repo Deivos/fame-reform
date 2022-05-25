@@ -13,8 +13,9 @@ $white: #fff;
 %title-border {
   font-family: 'Lato', sans-serif;
   font-size: 225px;
-  color: $gray;
-  text-shadow: -3px -3px 0px $white, 3px 3px 0px $white, -3px 3px 0px $white, 3px -3px 0px $white;
+  color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: $white;
   line-height: 225px;
 }
 
