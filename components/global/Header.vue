@@ -2,7 +2,7 @@
   <nav class="nav" aria-label="Main Menu">
     <div class="nav-skew">
         <div class="nav-logoWrapper">
-          <IconsFameStar />
+          <FameStar class="nav-logo" />
         </div>
         <ul class="nav-wrapper">
           <li class="nav-item">
@@ -26,24 +26,51 @@
 </template>
 
 <script>
+import FameStar from '~/components/icons/fameStar.svg?inline'
 export default {
-  name: 'Header'
+  name: 'Header',
+
+  components: {
+    FameStar
+  }
 }
 </script>
 
 <style lang="scss">
   @import '@/assets/sass/_variables.scss';
   .nav {
+    position: absolute;
+    top: 0;
     display: flex;
     width: 100%;
+    margin-bottom: 1.6%;
+    z-index: 10;
   }
 
   .nav-skew {
     display: flex;
     width: 100%;
-    margin-top: 2.6%;
+    padding: 0 5%;
+    margin-top: 1.6%;
     background-color: $fame;
     transform: skew(0deg, -2deg);
+  }
+
+  .nav-logoWrapper {
+    margin: 0 5% 0 0;
+    display: flex;
+    height: 100%;
+    min-width: 182px;
+    width: fit-content;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .nav-logo {
+    position: absolute;
+    display: flex;
+    box-sizing: border-box;
+    top: -35px;
   }
 
   .nav-wrapper {

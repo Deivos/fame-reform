@@ -8,6 +8,8 @@
 <style lang="scss">
   @import '@/assets/sass/_variables.scss';
   .wrapper {
+    position: relative;
+    padding-top: 8%;
     min-height: 100vh;
     background-color: $gray;
   }
