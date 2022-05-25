@@ -10,10 +10,10 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    let home = await $content("home").fetch();
-    home = home[0]
+    const home = await $content("home").fetch();
+
     return {
-      home
+      home,
     };
   },
 };
@@ -22,21 +22,12 @@ export default {
 <style lang="scss">
   @import '@/assets/sass/_variables.scss';
 
-  .home-title {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    border-bottom: 10px solid white;
-  }
+ .home-titleFull {
+   @extend %title-white;
+ }
 
-  .home-titleFull {
-    @extend %title-white;
-    display: flex;
-  }
-
-  .home-titleBorder {
-    @extend %title-border;
-    display: flex;
-  }
+ .home-titleBorder {
+   @extend %title-border;
+ }
 
 </style>

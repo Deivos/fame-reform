@@ -51,8 +51,11 @@ export default {
     ], // ? Imports the font 'Inter', can be optimized by the netlify plugin 'Subfont' by uncommenting it in `netlify.toml`
     noscript: [
       {
-        innerHTML:
-          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">'
+        innerHTML: [
+          '<link rel = "preconnect" href = "https://fonts.googleapis.com" >',
+          '<link rel = "preconnect" href = "https://fonts.gstatic.com" crossOrigin >',
+          '<link href = "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,900&display=swap" rel = "stylesheet" >'
+        ]
       }
     ],
     __dangerouslyDisableSanitizers: ['noscript']
@@ -64,7 +67,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/main.pcss'],
+  css: ['@/assets/sass/index.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -81,18 +84,6 @@ export default {
    ** Build configuration
    */
   build: {
-    extractCSS: true,
-    postcss: {
-      plugins: {
-        'postcss-preset-env': postcssPresetEnv({
-          stage: 1,
-          features: {
-            'nesting-rules': false
-          }
-        }),
-        'postcss-easing-gradients': postcssEasingGradients
-      }
-    },
     /*
      ** You can extend webpack config here
      */
@@ -109,24 +100,6 @@ export default {
     viewer: false, // disabled because it causes `Error: Cannot find module 'tailwindcss/resolveConfig'`, fixed in https://github.com/nuxt-community/tailwindcss-module/pull/303
     cssPath: '~/assets/css/main.pcss',
     exposeConfig: false // enables `import { theme } from '~tailwind.config'`
-  },
-  purgeCSS: {
-    mode: 'postcss',
-    // ? Safelisting docs: https://purgecss.com/safelisting.html
-    safelist: {
-      // standard: [],
-      deep: [/dark/, /light/, /btn/, /icon/, /main/],
-      greedy: [
-        /^card/,
-        /image$/,
-        /title$/,
-        /^nuxt-content/,
-        /code/,
-        /pre/,
-        /token/,
-        /^vue-content-placeholders/
-      ]
-    }
   },
   colorMode: {
     classSuffix: '',

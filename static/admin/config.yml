@@ -39,44 +39,29 @@ collections:
               pattern: ['^[a-z]{2}([-])?([A-Za-z]{2})?$', 'Must match "xx" or "xx-XX" syntax (ex. "en" or "sv-SE")'],
             }
           # - { label: Site Email, name: siteemail, widget: string, required: false }
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
-    create: true
-    format: 'frontmatter'
-    slug: '{{fields.createdAt}}-{{slug}}'
-    # editor:
-    #   preview: true
-    fields:
-      - { label: 'Created Date', name: 'createdAt', widget: 'datetime', date_format: "YYYY-MM-DD", time_format: false }
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Description', name: 'description', widget: 'string', required: false }
-      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
-  - name: 'projects'
-    label: 'Projects'
-    label_singular: 'Project'
-    folder: 'content/projects'
+  - name: 'home'
+    label: 'Accueil'
+    folder: 'content/home'
     create: true
     format: 'frontmatter'
     slug: '{{slug}}'
-    preview_path: 'projects/{{slug}}'
+    # editor:
+    #   preview: true
     fields:
-      - {
-          label: 'Project Category',
-          name: 'category',
-          widget: 'select',
-          default: 'animals',
-          options: [{ label: 'Animals', value: 'animals' }, { label: 'Food', value: 'food' }],
-        }
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Description', name: 'description', widget: 'string', required: false }
-      - { label: 'Cover Image', name: 'cover', widget: 'image', required: false, allow_multiple: false }
-      - { label: 'Content', name: 'body', widget: 'markdown', required: false }
-      - {
-          label: 'Gallery',
-          name: 'gallery',
-          widget: 'list',
-          required: false,
-          summary: '{{fields.image}}',
-          field: { label: 'Image', name: 'image', widget: 'image' },
-        }
+      - { label: 'Title 1', name: 'title_1', widget: 'string', required: true }
+      - { label: 'Title 2', name: 'title_2', widget: 'string', required: true }
+      - { label: 'Description', name: 'description_1', widget: 'string', required: true }
+      - { label: 'Description 2', name: 'description_2', widget: 'string', required: true }
+      - { label: 'Texte button', name: 'button', widget: 'string', required: true }
+      - { label: 'Lien button', name: 'button_link', widget: 'string', required: true }
+  - name: 'hours'
+    label: 'Horaire'
+    folder: 'content/hours'
+    create: true
+    format: 'frontmatter'
+    slug: '{{slug}}'
+    preview_path: 'hours'
+    fields:
+      - { label: 'Titre', name: 'title', widget: 'string', required: true }
+      - { label: 'Image horaire', name: 'hours', widget: 'image', required: true, allow_multiple: false }
+      - { label: 'Texte over', name: 'over', widget: 'string', required: false }

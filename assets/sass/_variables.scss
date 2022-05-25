@@ -1,0 +1,43 @@
+$gray: #585757;
+$fame: #f36c5d;
+$black: #000;
+$white: #fff;
+
+%title-white {
+  font-family: 'Lato', sans-serif;
+  font-size: 249px;
+  color: $white;
+  line-height: 200px;
+}
+
+%title-border {
+  font-family: 'Lato', sans-serif;
+  font-size: 225px;
+  color: $gray;
+  text-shadow: -3px -3px 0px $white, 3px 3px 0px $white, -3px 3px 0px $white, 3px -3px 0px $white;
+  line-height: 225px;
+}
+
+%subTitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 67px;
+  color: $white;
+}
+
+%buttonText {
+  font-family: 'Lato', sans-serif;
+  font-size: 81px;
+  color: $white;
+}
+
+%navText {
+  font-family: 'Lato', sans-serif;
+  font-size: 67px;
+  color: $white;
+}
+
+%normalText {
+  font-family: 'Lato', sans-serif;
+  font-size: 40px;
+  color: $white;
+}
