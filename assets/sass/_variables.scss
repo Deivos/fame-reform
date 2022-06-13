@@ -4,41 +4,121 @@ $black: #000;
 $white: #fff;
 
 %title-white {
-  font-family: 'Lato', sans-serif;
-  font-size: 249px;
+  font-family: 'Big-noodle', sans-serif;
+  font-style: italic;
+  font-size: 187px;
   color: $white;
-  line-height: 200px;
+  line-height: 150px;
 }
 
 %title-border {
-  font-family: 'Lato', sans-serif;
-  font-size: 225px;
+  font-family: 'Big-noodle', sans-serif;
+  font-style: italic;
+  font-size: 169px;
   color: transparent;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: $white;
-  line-height: 225px;
+  line-height: 140px;
 }
 
 %subTitle {
-  font-family: 'Lato', sans-serif;
-  font-size: 67px;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 50px;
   color: $white;
 }
 
 %buttonText {
-  font-family: 'Lato', sans-serif;
-  font-size: 81px;
+  font-family: 'Big-noodle', sans-serif;
+  font-style: italic;
+  font-size: 61px;
   color: $white;
+  text-shadow: 0px 3px 6px rgba(0,0,0,0.16)
 }
 
 %navText {
-  font-family: 'Lato', sans-serif;
-  font-size: 67px;
+  font-family: 'Big-noodle', sans-serif;
+  font-style: italic;
+  font-size: 50px;
   color: $white;
 }
 
 %normalText {
-  font-family: 'Lato', sans-serif;
-  font-size: 40px;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 30px;
   color: $white;
+}
+
+%button {
+  @extend %buttonText;
+  border-radius: 38px;
+  background: $fame;
+  padding: 0px 40px;
+
+  &:hover {
+    color: $black;
+  }
+
+  &:active {
+    color: $fame;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $white;
+  }
+}
+
+
+@media (max-width: 1600px) {
+  %title-white {
+    font-size: 125px;
+    line-height: 100px;
+  }
+
+  %title-border {
+    font-size: 113px;
+    line-height: 95px;
+  }
+
+  %subTitle {
+    font-size: 30px;
+  }
+
+  %buttonText {
+    font-size: 41px;
+  }
+
+  %navText {
+    font-size: 33px;
+  }
+
+  %normalText {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 715px) {
+  %title-white {
+    font-size: 70px;
+    line-height: 60px;
+  }
+
+  %title-border {
+    font-size: 51px;
+    line-height: 42px;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  %subTitle {
+    font-size: 35px;
+  }
+
+  %buttonText {
+    font-size: 34px;
+  }
+
+  %navText {
+    font-size: 24px;
+  }
+
+  %normalText {
+    font-size: 14px;
+  }
 }

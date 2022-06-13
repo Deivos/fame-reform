@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Big-noodle";
+  src: local('Big-noodle'), url(~assets/sass/fonts/big_noodle_titling.ttf) format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Big-noodle";
+  src: local('Big-noodle'), url(~assets/sass/fonts/big_noodle_titling_oblique.ttf) format("truetype");
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: "Bai Jamjuree ";
+  font-style: normal;
+  src: local('Bai Jamjuree'), url(~assets/sass/fonts/BaiJamjuree-Regular.ttf) format("truetype");
+}
