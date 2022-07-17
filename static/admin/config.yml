@@ -65,3 +65,26 @@ collections:
       - { label: 'Titre', name: 'title', widget: 'string', required: true }
       - { label: 'Image horaire', name: 'hours', widget: 'image', required: true, allow_multiple: false }
       - { label: 'Texte over', name: 'over', widget: 'string', required: false }
+  - name: 'season'
+    label: 'Saison'
+    folder: 'content/season'
+    create: true
+    format: 'frontmatter'
+    slug: '{{slug}}'
+    preview_path: 'season'
+    fields:
+      - { label: 'Titre', name: 'title', widget: 'string', required: true }
+      - label: 'Links'
+        name: 'link'
+        widget: 'list'
+        fields:
+          - { label: 'Label', name: 'label', widget: 'string', required: true }
+          - { label: 'Link', name: 'link', widget: 'string', required: true }
+      - { label: 'Team title', name: 'team_title', widget: 'string', required: true }
+      - label: 'Teams'
+        name: 'teams'
+        widget: 'list'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string', required: true }
+          - { label: 'Description', name: 'description', widget: 'string', required: true }
+          - { label: 'Image', name: 'image', widget: 'image', required: true, allow_multiple: false }

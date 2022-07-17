@@ -20,14 +20,30 @@
         </i>
         <a class="home-button" :href="home.button_link" target="_blank">{{ home.button }}</a>
       </div>
+      <div class="home-media">
+        <a class="home-instagram" href="http://www.instagram.com/fameelitecheer" target="_blank">
+        <instagram-icon  />
+        </a>
+        <a class="home-facebook" href="http://www.facebook.com/fameelitecheer" target="_blank">
+          <facebook-icon  />
+        </a>
+      </div>
     </div>
   </main>
 </template>
 
 <script>
 import Posts from "~/components/posts/posts";
+import FacebookIcon from '~/components/icons/facebook.svg?inline'
+import InstagramIcon from '~/components/icons/instagram.svg?inline'
+
 export default {
-  components: {Posts},
+  components: {
+    Posts,
+    FacebookIcon,
+    InstagramIcon
+  },
+
   async asyncData({ $content }) {
     let home = await $content("home").fetch();
     home = home[0]
@@ -53,7 +69,7 @@ export default {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 100%;
     flex-grow: 1;
     z-index: 2;
@@ -95,6 +111,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-self: center;
     padding: 3%;
     background: rgba(255, 255, 255, 0.19);
     backdrop-filter: blur(10px);
@@ -115,6 +132,22 @@ export default {
 
   .home-button {
     @extend %button;
+  }
+
+  .home-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-top: 4%;
+  }
+
+  .home-instagram {
+    margin-right: 20px;
+  }
+
+  .home-facebook {
+    margin-left: 20px;
   }
 
 </style>
